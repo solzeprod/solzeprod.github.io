@@ -1,198 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YOUR ARTIST NAME</title>
+# YOUR ARTIST NAME
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, Helvetica, sans-serif;
-    }
+> experimental • glitch • ambient • underground
 
-    body{
-      background:#0d0d0d;
-      color:white;
-      overflow-x:hidden;
-    }
+---
 
-    header{
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      background:linear-gradient(
-        180deg,
-        #1a1a1a,
-        #0d0d0d
-      );
-    }
+## LINKS
 
-    h1{
-      font-size:5rem;
-      letter-spacing:8px;
-      text-transform:uppercase;
-    }
+[Spotify](https://spotify.com)
 
-    .subtitle{
-      margin-top:10px;
-      color:#888;
-      font-size:1.2rem;
-    }
+[SoundCloud](https://soundcloud.com)
 
-    nav{
-      margin-top:30px;
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
+[YouTube](https://youtube.com)
 
-    nav a{
-      text-decoration:none;
-      color:white;
-      padding:12px 22px;
-      border:1px solid #333;
-      transition:0.3s;
-      border-radius:10px;
-    }
+[Instagram](https://instagram.com)
 
-    nav a:hover{
-      background:white;
-      color:black;
-    }
+---
 
-    section{
-      padding:100px 10%;
-    }
+## ABOUT
 
-    h2{
-      font-size:2.5rem;
-      margin-bottom:20px;
-    }
+Write your artist description here.
 
-    .card{
-      background:#141414;
-      padding:25px;
-      border-radius:20px;
-      margin-top:20px;
-      border:1px solid #222;
-    }
+Talk about:
+- your sound
+- inspirations
+- albums
+- aesthetic
+- upcoming projects
 
-    .music-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:20px;
-    }
+---
 
-    iframe{
-      width:100%;
-      height:200px;
-      border:none;
-      border-radius:15px;
-    }
+## MUSIC
 
-    footer{
-      text-align:center;
-      padding:40px;
-      color:#666;
-      border-top:1px solid #222;
-    }
+### Album / Song Name
 
-    .glow{
-      text-shadow:
-        0 0 10px #ffffff22,
-        0 0 20px #ffffff22;
-    }
-  </style>
-</head>
+![Cover Art](IMAGE_LINK_HERE)
 
-<body>
+[Listen Here](SONG_LINK_HERE)
 
-  <!-- HERO SECTION -->
-  <header>
-    <h1 class="glow">YOUR NAME</h1>
+---
 
-    <!-- EDIT THIS -->
-    <p class="subtitle">
-      experimental • glitch • ambient • underground
-    </p>
+### Another Release
 
-    <!-- EDIT LINKS -->
-    <nav>
-      <a href="https://spotify.com" target="_blank">Spotify</a>
+![Cover Art](IMAGE_LINK_HERE)
 
-      <a href="https://soundcloud.com" target="_blank">SoundCloud</a>
+[Listen Here](SONG_LINK_HERE)
 
-      <a href="https://youtube.com" target="_blank">YouTube</a>
+---
 
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-    </nav>
-  </header>
+## VIDEOS
 
-  <!-- ABOUT -->
-  <section>
-    <h2>About</h2>
+### Music Video Name
 
-    <div class="card">
-      <!-- EDIT THIS -->
-      <p>
-        Write your artist description here.
-        Talk about your sound, inspiration,
-        albums, aesthetic, or anything else.
-      </p>
-    </div>
-  </section>
+[Watch on YouTube](YOUTUBE_LINK_HERE)
 
-  <!-- MUSIC -->
-  <section>
-    <h2>Music</h2>
+---
 
-    <div class="music-grid">
+## CONTACT
 
-      <!-- SONG / ALBUM CARD -->
-      <div class="card">
-        <h3>Album / Song Name</h3>
+Email: youremail@gmail.com
 
-        <!-- REPLACE WITH EMBED LINK -->
-        <iframe
-          src="https://open.spotify.com/embed/track/YOURTRACK"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
-      </div>
+Discord: YOURDISCORD
 
-      <div class="card">
-        <h3>Another Release</h3>
+---
 
-        <iframe
-          src="https://open.spotify.com/embed/track/YOURTRACK"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
-      </div>
+## UPCOMING
 
-    </div>
-  </section>
+- New album soon...
+- Live visuals project
+- Vinyl release
+- Merch drop
 
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
+---
 
-    <div class="card">
-      <!-- EDIT EMAIL -->
-      <p>Email: youremail@gmail.com</p>
-    </div>
-  </section>
+## QUOTE
 
-  <footer>
-    © 2026 YOUR NAME
-  </footer>
+> "Put some deep atmospheric quote here."
 
-</body>
-</html>
+---
+
+© 2026 YOUR NAME
