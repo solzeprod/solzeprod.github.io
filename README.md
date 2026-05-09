@@ -1,4 +1,4 @@
-# YOUR ARTIST NAME
+# SØLZE
 
 > experimental • glitch • ambient • underground
 
@@ -6,26 +6,21 @@
 
 ## LINKS
 
-[Spotify](https://spotify.com)
+[Spotify](https://open.spotify.com/artist/2n5iFuO3QAHYYnBboeK7RX)
 
-[SoundCloud](https://soundcloud.com)
+[SoundCloud](https://soundcloud.com/solze-productions)
 
-[YouTube](https://youtube.com)
+[YouTube](https://www.youtube.com/@solzeprod)
 
-[Instagram](https://instagram.com)
+[Instagram](https://www.instagram.com/solzeprod/)
 
 ---
 
 ## ABOUT
 
-Write your artist description here.
+About SØLZE
 
-Talk about:
-- your sound
-- inspirations
-- albums
-- aesthetic
-- upcoming projects
+Gabe and Asher make music in their free time, when life seems to slow down. They use FL Studio, a widely used DAW for many producers and artists.
 
 ---
 
@@ -57,25 +52,24 @@ Talk about:
 
 ## CONTACT
 
-Email: youremail@gmail.com
+Email: solzeprod@gmail.com
 
-Discord: YOURDISCORD
+Discord: work in progress
 
 ---
 
 ## UPCOMING
 
 - New album soon...
-- Live visuals project
-- Vinyl release
-- Merch drop
+- Chrome Theory
+- June 7th (6/7)
 
 ---
 
 ## QUOTE
 
-> "Put some deep atmospheric quote here."
+> "Some memories don’t fade—they just lose their signal."
 
 ---
 
-© 2026 YOUR NAME
+© 2026 SØLZE
