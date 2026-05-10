@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SØLZE // SIGNAL</title>
+  <title>SØLZE // CHROME THEORY SIGNAL</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- BOOT SCREEN -->
+<div id="boot">
+  <div class="boot-text">
+    <p>BOOTING SØLZE SIGNAL...</p>
+    <p>FREQUENCY LOCKED</p>
+    <p>ENTERING CHROME THEORY SPACE</p>
+  </div>
+</div>
+
 <!-- NEWS TICKER -->
 <div class="news-ticker">
   <div class="ticker-track">
-    • CHROME THEORY COMING SOON •
-    • SIGNAL STABLE // NEW MUSIC IN DEVELOPMENT •
-    • SØLZE TRANSMISSION ACTIVE •
-    • 6/7 DROP CONFIRMED •
-    • EXPERIMENTAL AUDIO FREQUENCIES ONLINE •
+    CHROME THEORY COMING SOON • SIGNAL STABLE • SØLZE TRANSMISSION ACTIVE • 6/7 DROP CONFIRMED • EXPERIMENTAL AUDIO ONLINE •
   </div>
+</div>
+
+<!-- LIVE INDICATOR -->
+<div class="live">
+  ● LIVE SIGNAL
 </div>
 
 <header>
@@ -42,26 +52,25 @@
 </header>
 
 <section>
-  <h2>ABOUT</h2>
+  <h2>NODE 01 // ABOUT</h2>
   <div class="card">
-    Gabe and Asher create sound in silence — when time slows and everything feels distant.
-    Built in FL Studio, shaped through experimentation, distortion, and emotion.
+    Gabe and Asher create sound in silence — building experimental audio systems using FL Studio.
   </div>
 </section>
 
 <section>
-  <h2>UPCOMING TRANSMISSIONS</h2>
+  <h2>NODE 02 // UPCOMING TRANSMISSIONS</h2>
   <div class="card">
     <ul>
-      <li>CHROME THEORY — COMING SOON</li>
+      <li>CHROME THEORY // INCOMING</li>
       <li>6/7 RELEASE SIGNAL</li>
-      <li>NEW SOUND PACK EXPERIMENTS</li>
+      <li>NEW AUDIO EXPERIMENTS</li>
     </ul>
   </div>
 </section>
 
 <section>
-  <h2>SYSTEM QUOTE</h2>
+  <h2>NODE 03 // SYSTEM QUOTE</h2>
   <div class="card quote">
     “Some memories don’t fade—they just lose their signal.”
   </div>
@@ -72,15 +81,55 @@
 </footer>
 
 <script>
+  // BOOT SCREEN REMOVE
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("boot").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("boot").style.display = "none";
+      }, 800);
+    }, 1800);
+  });
+
+  // LOGO BOUNCE
   const logo = document.getElementById("logo");
+  let clicks = 0;
 
   logo.addEventListener("click", () => {
     logo.classList.add("bounce");
+    clicks++;
 
     setTimeout(() => {
       logo.classList.remove("bounce");
-    }, 700);
+    }, 600);
+
+    // easter egg
+    if(clicks === 5){
+      alert("SIGNAL OVERRIDE DETECTED // CHROME THEORY ACCESS GRANTED");
+      clicks = 0;
+    }
   });
+
+  // SYSTEM POPUPS
+  const messages = [
+    "SIGNAL STABLE",
+    "AUDIO FREQUENCY LOCKED",
+    "CHROME THEORY SYNCING...",
+    "DATA STREAM ACTIVE"
+  ];
+
+  setInterval(() => {
+    const msg = document.createElement("div");
+    msg.className = "popup";
+    msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+
+    document.body.appendChild(msg);
+
+    setTimeout(() => {
+      msg.remove();
+    }, 3000);
+
+  }, 8000);
 </script>
 
 </body>
