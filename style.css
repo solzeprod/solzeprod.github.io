@@ -5,98 +5,77 @@ body{
   color:white;
   text-align:center;
   overflow-x:hidden;
-  padding-top:40px;
 }
 
-/* SCANLINES */
-body::before{
-  content:"";
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:repeating-linear-gradient(
-    0deg,
-    rgba(255,255,255,0.03),
-    rgba(255,255,255,0.03) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  pointer-events:none;
-}
-
-/* BOOT SCREEN */
-#boot{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:black;
-  z-index:9999;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transition:0.8s;
-}
-
-.boot-text p{
-  color:#aaa;
-  letter-spacing:2px;
-}
-
-/* TICKER */
-.news-ticker{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:35px;
-  background:#0a0a0a;
-  border-bottom:1px solid #222;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  z-index:999;
-}
-
-.ticker-track{
-  white-space:nowrap;
-  display:inline-block;
-  padding-left:100%;
-  animation:scroll 18s linear infinite;
-  color:#aaa;
-  font-size:13px;
-  letter-spacing:2px;
-}
-
-@keyframes scroll{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-100%);}
+/* SITE HIDDEN INITIALLY */
+#site{
+  opacity:0;
+  transition:1s ease;
 }
 
 /* LIVE INDICATOR */
 .live{
   position:fixed;
-  top:45px;
-  right:15px;
+  top:10px;
+  left:10px;
   color:red;
   font-size:12px;
-  animation:blink 1s infinite;
+  animation:blink 1.2s infinite;
+  z-index:999;
 }
 
 @keyframes blink{
-  50%{opacity:0.3;}
+  50%{opacity:0.2;}
+}
+
+/* BOOT SCREEN */
+#boot{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  transition:0.8s;
+}
+
+.boot-box{
+  width:300px;
+  text-align:center;
+}
+
+.boot-message{
+  color:#aaa;
+  margin-bottom:20px;
+  transition:0.3s;
+}
+
+/* LOADING BAR */
+.bar{
+  width:100%;
+  height:2px;
+  background:#222;
+}
+
+.bar-fill{
+  width:0%;
+  height:100%;
+  background:white;
+  transition:0.3s;
 }
 
 /* HEADER */
 header{
-  padding:120px 20px 80px;
+  padding:120px 20px 60px;
 }
 
 h1{
   font-size:5rem;
-  cursor:pointer;
   letter-spacing:10px;
-  display:inline-block;
 }
 
 /* GLITCH */
@@ -136,22 +115,16 @@ h1{
   100%{clip-path:inset(80% 0 10% 0);}
 }
 
-/* BOUNCE */
-.bounce{
-  animation:bounce 0.6s ease;
-}
-
-@keyframes bounce{
-  0%{transform:scale(1);}
-  40%{transform:scale(1.3);}
-  100%{transform:scale(1);}
+/* TAGLINE */
+.tagline{
+  color:#888;
 }
 
 /* BUTTONS */
 .button-row{
   display:flex;
-  gap:15px;
   justify-content:center;
+  gap:15px;
   flex-wrap:wrap;
   margin-top:30px;
 }
@@ -166,15 +139,9 @@ h1{
 }
 
 .glitch-btn:hover{
-  animation:btn 0.25s steps(2,end);
   background:white;
   color:black;
-}
-
-@keyframes btn{
-  0%{transform:translate(0);}
-  50%{transform:translate(-2px,2px);}
-  100%{transform:translate(0);}
+  transform:scale(1.05);
 }
 
 /* SECTIONS */
@@ -191,7 +158,6 @@ h2{
 
 .card{
   background:#111;
-  border:1px solid #1f1f1f;
   padding:20px;
   border-radius:12px;
   margin-top:20px;
@@ -200,29 +166,9 @@ h2{
 
 .quote{
   font-style:italic;
-  color:#aaa;
 }
 
 footer{
   padding:40px;
   color:#555;
-}
-
-/* POPUPS */
-.popup{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  background:#111;
-  border:1px solid #333;
-  padding:10px 15px;
-  font-size:12px;
-  color:#aaa;
-  animation:fade 3s forwards;
-}
-
-@keyframes fade{
-  0%{opacity:0;}
-  10%{opacity:1;}
-  100%{opacity:0; transform:translateY(-10px);}
 }
