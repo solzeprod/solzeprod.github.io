@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>solzeprod :)</title>
-<link rel="icon" href="Add a heading.png">
+  <link rel="icon" href="Add a heading.png">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  
+
 <div class="online">
   ● ONLINE: <span id="count">12</span>
 </div>
-  
+
 <!-- NEWS TICKER -->
 <div class="news-ticker">
   <div class="ticker-track">
@@ -25,7 +25,9 @@
 <div class="live">● LIVE</div>
 
 <header>
-  <h1 id="logo" class="glitch" data-text="SØLZE">SØLZE</h1>
+
+  <!-- GLITCH LOGO -->
+  <h1 class="glitch" data-text="SØLZE">SØLZE</h1>
 
   <p class="tagline">experimental • glitch • ambient • underground</p>
 
@@ -67,38 +69,23 @@
   © 2026 SØLZE
 </footer>
 
-<!-- JS ADDED HERE -->
+<!-- JS -->
 <script>
 const countEl = document.getElementById("count");
 
+let current = 12;
+
 function updateOnline(){
-  const base = 8;
-  const fluctuation = Math.floor(Math.random() * 10);
-  countEl.textContent = base + fluctuation;
+  let change = Math.random() < 0.5 ? -1 : 1;
+  current += change;
+
+  if(current < 1) current = 1;
+
+  countEl.textContent = current;
 }
 
 updateOnline();
-setInterval(updateOnline, 3000);
-
-// logo bounce + easter egg
-const logo = document.getElementById("logo");
-
-let clicks = 0;
-
-logo.addEventListener("click", () => {
-  logo.classList.add("bounce");
-
-  setTimeout(() => {
-    logo.classList.remove("bounce");
-  }, 600);
-
-  clicks++;
-
-  if(clicks === 5){
-    alert("SIGNAL OVERRIDE DETECTED // CHROME THEORY UNLOCKED");
-    clicks = 0;
-  }
-});
+setInterval(updateOnline, 10000);
 </script>
 
 </body>
