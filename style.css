@@ -5,52 +5,32 @@ body{
   color:white;
   text-align:center;
   overflow-x:hidden;
+  padding-top:40px;
 }
 
-/* SITE HIDDEN UNTIL BOOT FINISHES */
-#site{
-  opacity:0;
-  transition:1s ease;
-}
-
-/* FULL SCREEN BOOT OVERLAY (IMPORTANT FIX) */
-#boot{
+/* =========================
+   SCANLINES
+========================= */
+body::before{
+  content:"";
   position:fixed;
-  inset:0;
+  top:0;
+  left:0;
   width:100%;
   height:100%;
-  background:black;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:99999;
+  background:repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events:none;
 }
 
-/* BOOT UI */
-.boot-box{
-  width:300px;
-}
-
-#bootMessage{
-  color:#aaa;
-  margin-bottom:20px;
-  transition:0.3s;
-}
-
-.bar{
-  width:100%;
-  height:2px;
-  background:#222;
-}
-
-#barFill{
-  width:0%;
-  height:100%;
-  background:white;
-  transition:0.3s;
-}
-
-/* NEWS TICKER */
+/* =========================
+   NEWS TICKER
+========================= */
 .news-ticker{
   position:fixed;
   top:0;
@@ -62,7 +42,7 @@ body{
   overflow:hidden;
   display:flex;
   align-items:center;
-  z-index:10;
+  z-index:999;
 }
 
 .ticker-track{
@@ -80,22 +60,26 @@ body{
   100%{transform:translateX(-100%);}
 }
 
-/* LIVE INDICATOR */
+/* =========================
+   LIVE INDICATOR
+========================= */
 .live{
   position:fixed;
-  top:40px;
+  top:10px;
   left:10px;
   color:red;
   font-size:12px;
   animation:blink 1.2s infinite;
-  z-index:10;
+  z-index:1000;
 }
 
 @keyframes blink{
   50%{opacity:0.2;}
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header{
   padding:120px 20px 60px;
 }
@@ -103,33 +87,63 @@ header{
 h1{
   font-size:5rem;
   letter-spacing:10px;
-  cursor:pointer;
+  margin:0;
+  line-height:1;
 }
 
-/* GLITCH */
+/* =========================
+   GLITCH (FIXED ALIGNMENT)
+========================= */
 .glitch{
   position:relative;
+  display:inline-block;
 }
 
 .glitch::before,
 .glitch::after{
   content:attr(data-text);
   position:absolute;
-  left:0;
   top:0;
+  left:0;
+  width:100%;
+  text-align:center;
 }
 
 .glitch::before{
   left:2px;
   text-shadow:-2px 0 red;
+  animation:gl1 2s infinite;
 }
 
 .glitch::after{
   left:-2px;
   text-shadow:-2px 0 blue;
+  animation:gl2 2s infinite;
 }
 
-/* BUTTONS */
+@keyframes gl1{
+  0%{clip-path:inset(0 0 80% 0);}
+  50%{clip-path:inset(30% 0 40% 0);}
+  100%{clip-path:inset(0 0 80% 0);}
+}
+
+@keyframes gl2{
+  0%{clip-path:inset(80% 0 10% 0);}
+  50%{clip-path:inset(10% 0 60% 0);}
+  100%{clip-path:inset(80% 0 10% 0);}
+}
+
+/* =========================
+   TAGLINE
+========================= */
+.tagline{
+  color:#888;
+  margin-top:10px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
 .button-row{
   display:flex;
   justify-content:center;
@@ -153,11 +167,18 @@ h1{
   transform:scale(1.05);
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 section{
   max-width:800px;
   margin:auto;
   padding:80px 20px;
+}
+
+h2{
+  border-bottom:1px solid #222;
+  padding-bottom:10px;
 }
 
 .card{
@@ -173,7 +194,9 @@ section{
   color:#aaa;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer{
   padding:40px;
   color:#555;
