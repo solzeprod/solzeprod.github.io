@@ -8,9 +8,7 @@ body{
   padding-top:40px;
 }
 
-/* =========================
-   SCANLINES
-========================= */
+/* SCANLINES */
 body::before{
   content:"";
   position:fixed;
@@ -28,9 +26,7 @@ body::before{
   pointer-events:none;
 }
 
-/* =========================
-   NEWS TICKER
-========================= */
+/* NEWS TICKER */
 .news-ticker{
   position:fixed;
   top:0;
@@ -60,9 +56,7 @@ body::before{
   100%{transform:translateX(-100%);}
 }
 
-/* =========================
-   LIVE INDICATOR
-========================= */
+/* LIVE */
 .live{
   position:fixed;
   top:45px;
@@ -77,9 +71,22 @@ body::before{
   50%{opacity:0.2;}
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ONLINE */
+.online{
+  position:fixed;
+  top:45px;
+  right:10px;
+  color:#00ff7f;
+  font-size:12px;
+  animation:blinksoft 2s infinite;
+  z-index:1000;
+}
+
+@keyframes blinksoft{
+  50%{opacity:0.4;}
+}
+
+/* HEADER */
 header{
   padding:120px 20px 60px;
 }
@@ -88,12 +95,9 @@ h1{
   font-size:5rem;
   letter-spacing:10px;
   margin:0;
-  line-height:1;
 }
 
-/* =========================
-   GLITCH (FIXED ALIGNMENT)
-========================= */
+/* GLITCH FIX */
 .glitch{
   position:relative;
   display:inline-block;
@@ -112,38 +116,19 @@ h1{
 .glitch::before{
   left:2px;
   text-shadow:-2px 0 red;
-  animation:gl1 2s infinite;
 }
 
 .glitch::after{
   left:-2px;
   text-shadow:-2px 0 blue;
-  animation:gl2 2s infinite;
 }
 
-@keyframes gl1{
-  0%{clip-path:inset(0 0 80% 0);}
-  50%{clip-path:inset(30% 0 40% 0);}
-  100%{clip-path:inset(0 0 80% 0);}
-}
-
-@keyframes gl2{
-  0%{clip-path:inset(80% 0 10% 0);}
-  50%{clip-path:inset(10% 0 60% 0);}
-  100%{clip-path:inset(80% 0 10% 0);}
-}
-
-/* =========================
-   TAGLINE
-========================= */
+/* TAGLINE */
 .tagline{
   color:#888;
-  margin-top:10px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 .button-row{
   display:flex;
   justify-content:center;
@@ -167,9 +152,7 @@ h1{
   transform:scale(1.05);
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 section{
   max-width:800px;
   margin:auto;
@@ -194,25 +177,8 @@ h2{
   color:#aaa;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer{
   padding:40px;
   color:#555;
-}
-
-.online{
-  position:fixed;
-  top:45px;
-  right:10px;
-  color:#00ff7f;
-  font-size:12px;
-  animation:blinksoft 2s infinite;
-  z-index:1000;
-  letter-spacing:1px;
-}
-
-@keyframes blinksoft{
-  50%{opacity:0.4;}
 }
