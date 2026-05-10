@@ -7,65 +7,92 @@ body{
   overflow-x:hidden;
 }
 
-/* SITE HIDDEN INITIALLY */
+/* SITE HIDDEN UNTIL BOOT FINISHES */
 #site{
   opacity:0;
   transition:1s ease;
 }
 
-/* LIVE INDICATOR */
-.live{
-  position:fixed;
-  top:10px;
-  left:10px;
-  color:red;
-  font-size:12px;
-  animation:blink 1.2s infinite;
-  z-index:999;
-}
-
-@keyframes blink{
-  50%{opacity:0.2;}
-}
-
-/* BOOT SCREEN */
+/* FULL SCREEN BOOT OVERLAY (IMPORTANT FIX) */
 #boot{
   position:fixed;
-  top:0;
-  left:0;
+  inset:0;
   width:100%;
   height:100%;
   background:black;
   display:flex;
   justify-content:center;
   align-items:center;
-  z-index:9999;
-  transition:0.8s;
+  z-index:99999;
 }
 
+/* BOOT UI */
 .boot-box{
   width:300px;
-  text-align:center;
 }
 
-.boot-message{
+#bootMessage{
   color:#aaa;
   margin-bottom:20px;
   transition:0.3s;
 }
 
-/* LOADING BAR */
 .bar{
   width:100%;
   height:2px;
   background:#222;
 }
 
-.bar-fill{
+#barFill{
   width:0%;
   height:100%;
   background:white;
   transition:0.3s;
+}
+
+/* NEWS TICKER */
+.news-ticker{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:35px;
+  background:#0a0a0a;
+  border-bottom:1px solid #222;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  z-index:10;
+}
+
+.ticker-track{
+  white-space:nowrap;
+  display:inline-block;
+  padding-left:100%;
+  animation:scroll 18s linear infinite;
+  color:#aaa;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-100%);}
+}
+
+/* LIVE INDICATOR */
+.live{
+  position:fixed;
+  top:40px;
+  left:10px;
+  color:red;
+  font-size:12px;
+  animation:blink 1.2s infinite;
+  z-index:10;
+}
+
+@keyframes blink{
+  50%{opacity:0.2;}
 }
 
 /* HEADER */
@@ -76,6 +103,7 @@ header{
 h1{
   font-size:5rem;
   letter-spacing:10px;
+  cursor:pointer;
 }
 
 /* GLITCH */
@@ -94,30 +122,11 @@ h1{
 .glitch::before{
   left:2px;
   text-shadow:-2px 0 red;
-  animation:gl1 2s infinite;
 }
 
 .glitch::after{
   left:-2px;
   text-shadow:-2px 0 blue;
-  animation:gl2 2s infinite;
-}
-
-@keyframes gl1{
-  0%{clip-path:inset(0 0 80% 0);}
-  50%{clip-path:inset(30% 0 40% 0);}
-  100%{clip-path:inset(0 0 80% 0);}
-}
-
-@keyframes gl2{
-  0%{clip-path:inset(80% 0 10% 0);}
-  50%{clip-path:inset(10% 0 60% 0);}
-  100%{clip-path:inset(80% 0 10% 0);}
-}
-
-/* TAGLINE */
-.tagline{
-  color:#888;
 }
 
 /* BUTTONS */
@@ -151,11 +160,6 @@ section{
   padding:80px 20px;
 }
 
-h2{
-  border-bottom:1px solid #222;
-  padding-bottom:10px;
-}
-
 .card{
   background:#111;
   padding:20px;
@@ -166,8 +170,10 @@ h2{
 
 .quote{
   font-style:italic;
+  color:#aaa;
 }
 
+/* FOOTER */
 footer{
   padding:40px;
   color:#555;
