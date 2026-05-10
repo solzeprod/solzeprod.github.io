@@ -8,7 +8,9 @@ body{
   padding-top:40px;
 }
 
-/* SCANLINES */
+/* =========================
+   CRT / SCANLINE EFFECT
+========================= */
 body::before{
   content:"";
   position:fixed;
@@ -24,9 +26,12 @@ body::before{
     transparent 3px
   );
   pointer-events:none;
+  z-index:1;
 }
 
-/* NEWS TICKER */
+/* =========================
+   NEWS TICKER (TOP BAR)
+========================= */
 .news-ticker{
   position:fixed;
   top:0;
@@ -42,23 +47,31 @@ body::before{
 }
 
 .ticker-track{
-  white-space:nowrap;
   display:inline-block;
+  white-space:nowrap;
   padding-left:100%;
-  animation:scroll 18s linear infinite;
+  animation:ticker 18s linear infinite;
   color:#aaa;
-  letter-spacing:2px;
   font-size:13px;
+  letter-spacing:2px;
 }
 
-@keyframes scroll{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-100%);}
+@keyframes ticker{
+  0%{
+    transform:translateX(0%);
+  }
+  100%{
+    transform:translateX(-100%);
+  }
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header{
   padding:120px 20px 80px;
+  position:relative;
+  z-index:2;
 }
 
 h1{
@@ -66,21 +79,12 @@ h1{
   letter-spacing:10px;
   cursor:pointer;
   display:inline-block;
+  position:relative;
 }
 
-/* LOGO BOUNCE */
-.bounce{
-  animation:bounce 0.7s ease;
-}
-
-@keyframes bounce{
-  0%{transform:scale(1);}
-  30%{transform:scale(1.3);}
-  60%{transform:scale(0.9);}
-  100%{transform:scale(1);}
-}
-
-/* GLITCH TEXT */
+/* =========================
+   GLITCH TEXT EFFECT
+========================= */
 .glitch{
   position:relative;
 }
@@ -97,40 +101,62 @@ h1{
 .glitch::before{
   left:2px;
   text-shadow:-2px 0 red;
-  animation:gl1 2s infinite;
+  animation:glitch1 2s infinite;
 }
 
 .glitch::after{
   left:-2px;
   text-shadow:-2px 0 blue;
-  animation:gl2 2s infinite;
+  animation:glitch2 2s infinite;
 }
 
-@keyframes gl1{
+@keyframes glitch1{
   0%{clip-path:inset(0 0 90% 0);}
-  50%{clip-path:inset(40% 0 40% 0);}
+  50%{clip-path:inset(30% 0 40% 0);}
   100%{clip-path:inset(0 0 90% 0);}
 }
 
-@keyframes gl2{
+@keyframes glitch2{
   0%{clip-path:inset(80% 0 10% 0);}
   50%{clip-path:inset(10% 0 60% 0);}
   100%{clip-path:inset(80% 0 10% 0);}
 }
 
-/* TAGLINE */
+/* =========================
+   LOGO CLICK BOUNCE
+========================= */
+.bounce{
+  animation:bounce 0.7s ease;
+}
+
+@keyframes bounce{
+  0%{transform:scale(1);}
+  30%{transform:scale(1.3);}
+  60%{transform:scale(0.9);}
+  100%{transform:scale(1);}
+}
+
+/* =========================
+   TAGLINE
+========================= */
 .tagline{
   color:#888;
   margin-top:10px;
+  position:relative;
+  z-index:2;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 .button-row{
   display:flex;
   gap:15px;
   justify-content:center;
   flex-wrap:wrap;
   margin-top:30px;
+  position:relative;
+  z-index:2;
 }
 
 .glitch-btn{
@@ -139,18 +165,20 @@ h1{
   border:1px solid #333;
   color:white;
   text-decoration:none;
-  transition:0.2s;
   position:relative;
+  transition:0.2s;
+  overflow:hidden;
 }
 
+/* hover glitch jitter */
 .glitch-btn:hover{
-  animation:btn 0.25s steps(2,end);
+  animation:btn-glitch 0.25s steps(2,end);
   background:white;
   color:black;
   transform:scale(1.05);
 }
 
-@keyframes btn{
+@keyframes btn-glitch{
   0%{transform:translate(0);}
   25%{transform:translate(-2px,2px);}
   50%{transform:translate(2px,-2px);}
@@ -158,11 +186,15 @@ h1{
   100%{transform:translate(0);}
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 section{
   max-width:800px;
   margin:auto;
   padding:80px 20px;
+  position:relative;
+  z-index:2;
 }
 
 h2{
@@ -170,7 +202,9 @@ h2{
   padding-bottom:10px;
 }
 
-/* CARD */
+/* =========================
+   CARDS
+========================= */
 .card{
   background:#111;
   border:1px solid #1f1f1f;
@@ -180,14 +214,20 @@ h2{
   color:#ccc;
 }
 
-/* QUOTE */
+/* =========================
+   QUOTE
+========================= */
 .quote{
   font-style:italic;
   color:#aaa;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer{
   padding:40px;
   color:#555;
+  position:relative;
+  z-index:2;
 }
