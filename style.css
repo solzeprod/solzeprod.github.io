@@ -5,9 +5,10 @@ body{
   color:white;
   text-align:center;
   overflow-x:hidden;
+  padding-top:40px;
 }
 
-/* scanline background */
+/* SCANLINES */
 body::before{
   content:"";
   position:fixed;
@@ -25,6 +26,36 @@ body::before{
   pointer-events:none;
 }
 
+/* NEWS TICKER */
+.news-ticker{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:35px;
+  background:#0a0a0a;
+  border-bottom:1px solid #222;
+  overflow:hidden;
+  z-index:999;
+  display:flex;
+  align-items:center;
+}
+
+.ticker-track{
+  white-space:nowrap;
+  display:inline-block;
+  padding-left:100%;
+  animation:scroll 18s linear infinite;
+  color:#aaa;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-100%);}
+}
+
 /* HEADER */
 header{
   padding:120px 20px 80px;
@@ -32,14 +63,26 @@ header{
 
 h1{
   font-size:5rem;
-  letter-spacing:8px;
-  position:relative;
+  letter-spacing:10px;
+  cursor:pointer;
+  display:inline-block;
+}
+
+/* LOGO BOUNCE */
+.bounce{
+  animation:bounce 0.7s ease;
+}
+
+@keyframes bounce{
+  0%{transform:scale(1);}
+  30%{transform:scale(1.3);}
+  60%{transform:scale(0.9);}
+  100%{transform:scale(1);}
 }
 
 /* GLITCH TEXT */
 .glitch{
   position:relative;
-  animation:glitch-skew 2s infinite;
 }
 
 .glitch::before,
@@ -49,80 +92,65 @@ h1{
   left:0;
   top:0;
   width:100%;
-  overflow:hidden;
 }
 
 .glitch::before{
   left:2px;
   text-shadow:-2px 0 red;
-  animation:glitch-1 2s infinite;
+  animation:gl1 2s infinite;
 }
 
 .glitch::after{
   left:-2px;
   text-shadow:-2px 0 blue;
-  animation:glitch-2 2s infinite;
+  animation:gl2 2s infinite;
 }
 
-@keyframes glitch-1{
+@keyframes gl1{
   0%{clip-path:inset(0 0 90% 0);}
-  20%{clip-path:inset(10% 0 60% 0);}
-  40%{clip-path:inset(80% 0 5% 0);}
-  60%{clip-path:inset(40% 0 40% 0);}
-  80%{clip-path:inset(20% 0 20% 0);}
+  50%{clip-path:inset(40% 0 40% 0);}
   100%{clip-path:inset(0 0 90% 0);}
 }
 
-@keyframes glitch-2{
-  0%{clip-path:inset(80% 0 5% 0);}
-  20%{clip-path:inset(40% 0 40% 0);}
-  40%{clip-path:inset(10% 0 60% 0);}
-  60%{clip-path:inset(0 0 90% 0);}
-  80%{clip-path:inset(20% 0 20% 0);}
-  100%{clip-path:inset(80% 0 5% 0);}
-}
-
-@keyframes glitch-skew{
-  0%{transform:skew(0deg);}
-  50%{transform:skew(2deg);}
-  100%{transform:skew(0deg);}
+@keyframes gl2{
+  0%{clip-path:inset(80% 0 10% 0);}
+  50%{clip-path:inset(10% 0 60% 0);}
+  100%{clip-path:inset(80% 0 10% 0);}
 }
 
 /* TAGLINE */
 .tagline{
   color:#888;
-  margin-top:-10px;
-  margin-bottom:40px;
+  margin-top:10px;
 }
 
 /* BUTTONS */
 .button-row{
   display:flex;
   gap:15px;
-  flex-wrap:wrap;
   justify-content:center;
+  flex-wrap:wrap;
+  margin-top:30px;
 }
 
 .glitch-btn{
-  padding:12px 20px;
+  padding:12px 18px;
+  background:#111;
   border:1px solid #333;
   color:white;
   text-decoration:none;
-  position:relative;
-  background:#111;
   transition:0.2s;
-  overflow:hidden;
+  position:relative;
 }
 
-/* hover glitch effect */
 .glitch-btn:hover{
-  animation:btn-glitch 0.3s steps(2,end);
+  animation:btn 0.25s steps(2,end);
   background:white;
   color:black;
   transform:scale(1.05);
 }
 
-@keyframes btn-glitch{
+@keyframes btn{
   0%{transform:translate(0);}
   25%{transform:translate(-2px,2px);}
   50%{transform:translate(2px,-2px);}
@@ -130,11 +158,11 @@ h1{
   100%{transform:translate(0);}
 }
 
-/* sections */
+/* SECTIONS */
 section{
-  padding:80px 20px;
   max-width:800px;
   margin:auto;
+  padding:80px 20px;
 }
 
 h2{
@@ -142,13 +170,23 @@ h2{
   padding-bottom:10px;
 }
 
-/* quote */
+/* CARD */
+.card{
+  background:#111;
+  border:1px solid #1f1f1f;
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+  color:#ccc;
+}
+
+/* QUOTE */
 .quote{
   font-style:italic;
   color:#aaa;
 }
 
-/* footer */
+/* FOOTER */
 footer{
   padding:40px;
   color:#555;
