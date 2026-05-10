@@ -65,7 +65,7 @@ body::before{
 ========================= */
 .live{
   position:fixed;
-  top:10px;
+  top:7px;
   left:10px;
   color:red;
   font-size:12px;
