@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SØLZE // BOOT SEQUENCE</title>
+  <title>SØLZE // SIGNAL</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- BOOT SCREEN -->
+<!-- BOOT SCREEN (FULL OVERLAY) -->
 <div id="boot">
   <div class="boot-box">
+    <div id="bootMessage">Initializing system...</div>
+    <div class="bar"><div id="barFill"></div></div>
+  </div>
+</div>
 
-    <div class="boot-message" id="bootMessage">Initializing system...</div>
-
-    <div class="bar">
-      <div class="bar-fill" id="barFill"></div>
-    </div>
-
+<!-- NEWS TICKER (ALWAYS EXISTS, but hidden under boot) -->
+<div class="news-ticker">
+  <div class="ticker-track">
+    CHROME THEORY COMING SOON • SIGNAL ACTIVE • SØLZE TRANSMISSION ONLINE • 6/7 DROP • EXPERIMENTAL AUDIO STREAM •
   </div>
 </div>
 
@@ -30,7 +32,7 @@
 <div id="site">
 
 <header>
-  <h1 class="glitch" data-text="SØLZE">SØLZE</h1>
+  <h1 id="logo" class="glitch" data-text="SØLZE">SØLZE</h1>
 
   <p class="tagline">experimental • glitch • ambient • underground</p>
 
@@ -46,23 +48,17 @@
 
 <section>
   <h2>ABOUT</h2>
-  <div class="card">
-    SØLZE creates experimental sound systems using FL Studio.
-  </div>
+  <div class="card">SØLZE creates experimental sound systems using FL Studio.</div>
 </section>
 
 <section>
   <h2>UPCOMING</h2>
-  <div class="card">
-    CHROME THEORY // COMING SOON
-  </div>
+  <div class="card">CHROME THEORY // COMING SOON</div>
 </section>
 
 <section>
   <h2>QUOTE</h2>
-  <div class="card quote">
-    “Some memories don’t fade—they just lose their signal.”
-  </div>
+  <div class="card quote">“Some memories don’t fade—they just lose their signal.”</div>
 </section>
 
 <footer>
@@ -73,35 +69,32 @@
 
 <script>
 const messages = [
-  "Booting SØLZE system...",
-  "Loading audio engine...",
+  "Initializing system...",
+  "Booting audio engine...",
   "Syncing Chrome Theory assets...",
-  "Calibrating frequency signal...",
-  "Initializing interface..."
+  "Calibrating signal frequency...",
+  "Loading interface..."
 ];
 
 let i = 0;
-const msgEl = document.getElementById("bootMessage");
-const bar = document.getElementById("barFill");
-
 let progress = 0;
+
+const msg = document.getElementById("bootMessage");
+const bar = document.getElementById("barFill");
 
 const interval = setInterval(() => {
 
-  // progress bar
   progress += 20;
   bar.style.width = progress + "%";
 
-  // change message ONE BY ONE
-  msgEl.style.opacity = 0;
+  msg.style.opacity = 0;
 
   setTimeout(() => {
-    msgEl.textContent = messages[i];
-    msgEl.style.opacity = 1;
+    msg.textContent = messages[i];
+    msg.style.opacity = 1;
     i++;
-  }, 300);
+  }, 200);
 
-  // finish boot
   if(progress >= 100){
     clearInterval(interval);
 
