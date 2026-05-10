@@ -53,7 +53,6 @@
   <h2>UPCOMING</h2>
   <div class="card">
     CHROME THEORY // COMING SOON • 6/7 RELEASE SIGNAL • MORE MUSIC • SUBSCRIBE TO SOLZEPROD • IDK BRO 
-
   </div>
 </section>
 
@@ -67,6 +66,40 @@
 <footer>
   © 2026 SØLZE
 </footer>
+
+<!-- JS ADDED HERE -->
+<script>
+const countEl = document.getElementById("count");
+
+function updateOnline(){
+  const base = 8;
+  const fluctuation = Math.floor(Math.random() * 10);
+  countEl.textContent = base + fluctuation;
+}
+
+updateOnline();
+setInterval(updateOnline, 3000);
+
+// logo bounce + easter egg
+const logo = document.getElementById("logo");
+
+let clicks = 0;
+
+logo.addEventListener("click", () => {
+  logo.classList.add("bounce");
+
+  setTimeout(() => {
+    logo.classList.remove("bounce");
+  }, 600);
+
+  clicks++;
+
+  if(clicks === 5){
+    alert("SIGNAL OVERRIDE DETECTED // CHROME THEORY UNLOCKED");
+    clicks = 0;
+  }
+});
+</script>
 
 </body>
 </html>
