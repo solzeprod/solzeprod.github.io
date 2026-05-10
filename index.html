@@ -10,26 +10,15 @@
 
 <body>
 
-<!-- BOOT SCREEN (FULL OVERLAY) -->
-<div id="boot">
-  <div class="boot-box">
-    <div id="bootMessage">Initializing system...</div>
-    <div class="bar"><div id="barFill"></div></div>
-  </div>
-</div>
-
-<!-- NEWS TICKER (ALWAYS EXISTS, but hidden under boot) -->
+<!-- NEWS TICKER -->
 <div class="news-ticker">
   <div class="ticker-track">
-    CHROME THEORY COMING SOON • SIGNAL ACTIVE • SØLZE TRANSMISSION ONLINE • 6/7 DROP • EXPERIMENTAL AUDIO STREAM •
+    CHROME THEORY COMING SOON • SØLZE SIGNAL ACTIVE • 6/7 DROP • EXPERIMENTAL AUDIO STREAM • SYSTEM ONLINE •
   </div>
 </div>
 
 <!-- LIVE INDICATOR -->
 <div class="live">● LIVE</div>
-
-<!-- MAIN SITE -->
-<div id="site">
 
 <header>
   <h1 id="logo" class="glitch" data-text="SØLZE">SØLZE</h1>
@@ -38,79 +27,47 @@
 
   <div class="button-row">
 
-    <a class="glitch-btn" href="#">Spotify</a>
-    <a class="glitch-btn" href="#">SoundCloud</a>
-    <a class="glitch-btn" href="#">YouTube</a>
-    <a class="glitch-btn" href="#">Instagram</a>
+    <a class="glitch-btn" href="https://open.spotify.com/artist/2n5iFuO3QAHYYnBboeK7RX" target="_blank">Spotify</a>
+
+    <a class="glitch-btn" href="https://soundcloud.com/solze-productions" target="_blank">SoundCloud</a>
+
+    <a class="glitch-btn" href="https://www.youtube.com/@solzeprod" target="_blank">YouTube</a>
+
+    <a class="glitch-btn" href="https://www.instagram.com/solzeprod/" target="_blank">Instagram</a>
 
   </div>
 </header>
 
 <section>
   <h2>ABOUT</h2>
-  <div class="card">SØLZE creates experimental sound systems using FL Studio.</div>
+  <div class="card">
+    SØLZE creates experimental sound systems using FL Studio.
+  </div>
 </section>
 
 <section>
   <h2>UPCOMING</h2>
-  <div class="card">CHROME THEORY // COMING SOON</div>
+  <div class="card">
+    CHROME THEORY // COMING SOON • 6/7 RELEASE SIGNAL
+    Poopy poop i just farted
+    more farts
+
+
+
+    more farrts
+  </div>
 </section>
 
 <section>
   <h2>QUOTE</h2>
-  <div class="card quote">“Some memories don’t fade—they just lose their signal.”</div>
+  <div class="card quote">
+    “Some memories don’t fade—they just lose their signal.”
+  </div>
 </section>
 
 <footer>
   © 2026 SØLZE
 </footer>
-
-</div>
-
-<script>
-const messages = [
-  "Initializing system...",
-  "Booting audio engine...",
-  "Syncing Chrome Theory assets...",
-  "Calibrating signal frequency...",
-  "Loading interface..."
-];
-
-let i = 0;
-let progress = 0;
-
-const msg = document.getElementById("bootMessage");
-const bar = document.getElementById("barFill");
-
-const interval = setInterval(() => {
-
-  progress += 20;
-  bar.style.width = progress + "%";
-
-  msg.style.opacity = 0;
-
-  setTimeout(() => {
-    msg.textContent = messages[i];
-    msg.style.opacity = 1;
-    i++;
-  }, 200);
-
-  if(progress >= 100){
-    clearInterval(interval);
-
-    setTimeout(() => {
-      document.getElementById("boot").style.opacity = "0";
-
-      setTimeout(() => {
-        document.getElementById("boot").style.display = "none";
-        document.getElementById("site").style.opacity = "1";
-      }, 800);
-
-    }, 600);
-  }
-
-}, 700);
-</script>
 
 </body>
 </html>
