@@ -8,9 +8,7 @@ body{
   padding-top:40px;
 }
 
-/* =========================
-   CRT / SCANLINE EFFECT
-========================= */
+/* SCANLINES */
 body::before{
   content:"";
   position:fixed;
@@ -26,65 +24,82 @@ body::before{
     transparent 3px
   );
   pointer-events:none;
-  z-index:1;
 }
 
-/* =========================
-   NEWS TICKER (TOP BAR)
-========================= */
+/* BOOT SCREEN */
+#boot{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  z-index:9999;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:0.8s;
+}
+
+.boot-text p{
+  color:#aaa;
+  letter-spacing:2px;
+}
+
+/* TICKER */
 .news-ticker{
   position:fixed;
   top:0;
-  left:0;
   width:100%;
   height:35px;
   background:#0a0a0a;
   border-bottom:1px solid #222;
   overflow:hidden;
-  z-index:999;
   display:flex;
   align-items:center;
+  z-index:999;
 }
 
 .ticker-track{
-  display:inline-block;
   white-space:nowrap;
+  display:inline-block;
   padding-left:100%;
-  animation:ticker 18s linear infinite;
+  animation:scroll 18s linear infinite;
   color:#aaa;
   font-size:13px;
   letter-spacing:2px;
 }
 
-@keyframes ticker{
-  0%{
-    transform:translateX(0%);
-  }
-  100%{
-    transform:translateX(-100%);
-  }
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-100%);}
 }
 
-/* =========================
-   HEADER
-========================= */
+/* LIVE INDICATOR */
+.live{
+  position:fixed;
+  top:45px;
+  right:15px;
+  color:red;
+  font-size:12px;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0.3;}
+}
+
+/* HEADER */
 header{
   padding:120px 20px 80px;
-  position:relative;
-  z-index:2;
 }
 
 h1{
   font-size:5rem;
-  letter-spacing:10px;
   cursor:pointer;
+  letter-spacing:10px;
   display:inline-block;
-  position:relative;
 }
 
-/* =========================
-   GLITCH TEXT EFFECT
-========================= */
+/* GLITCH */
 .glitch{
   position:relative;
 }
@@ -95,68 +110,50 @@ h1{
   position:absolute;
   left:0;
   top:0;
-  width:100%;
 }
 
 .glitch::before{
   left:2px;
   text-shadow:-2px 0 red;
-  animation:glitch1 2s infinite;
+  animation:gl1 2s infinite;
 }
 
 .glitch::after{
   left:-2px;
   text-shadow:-2px 0 blue;
-  animation:glitch2 2s infinite;
+  animation:gl2 2s infinite;
 }
 
-@keyframes glitch1{
-  0%{clip-path:inset(0 0 90% 0);}
+@keyframes gl1{
+  0%{clip-path:inset(0 0 80% 0);}
   50%{clip-path:inset(30% 0 40% 0);}
-  100%{clip-path:inset(0 0 90% 0);}
+  100%{clip-path:inset(0 0 80% 0);}
 }
 
-@keyframes glitch2{
+@keyframes gl2{
   0%{clip-path:inset(80% 0 10% 0);}
   50%{clip-path:inset(10% 0 60% 0);}
   100%{clip-path:inset(80% 0 10% 0);}
 }
 
-/* =========================
-   LOGO CLICK BOUNCE
-========================= */
+/* BOUNCE */
 .bounce{
-  animation:bounce 0.7s ease;
+  animation:bounce 0.6s ease;
 }
 
 @keyframes bounce{
   0%{transform:scale(1);}
-  30%{transform:scale(1.3);}
-  60%{transform:scale(0.9);}
+  40%{transform:scale(1.3);}
   100%{transform:scale(1);}
 }
 
-/* =========================
-   TAGLINE
-========================= */
-.tagline{
-  color:#888;
-  margin-top:10px;
-  position:relative;
-  z-index:2;
-}
-
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 .button-row{
   display:flex;
   gap:15px;
   justify-content:center;
   flex-wrap:wrap;
   margin-top:30px;
-  position:relative;
-  z-index:2;
 }
 
 .glitch-btn{
@@ -165,36 +162,26 @@ h1{
   border:1px solid #333;
   color:white;
   text-decoration:none;
-  position:relative;
   transition:0.2s;
-  overflow:hidden;
 }
 
-/* hover glitch jitter */
 .glitch-btn:hover{
-  animation:btn-glitch 0.25s steps(2,end);
+  animation:btn 0.25s steps(2,end);
   background:white;
   color:black;
-  transform:scale(1.05);
 }
 
-@keyframes btn-glitch{
+@keyframes btn{
   0%{transform:translate(0);}
-  25%{transform:translate(-2px,2px);}
-  50%{transform:translate(2px,-2px);}
-  75%{transform:translate(-1px,1px);}
+  50%{transform:translate(-2px,2px);}
   100%{transform:translate(0);}
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 section{
   max-width:800px;
   margin:auto;
   padding:80px 20px;
-  position:relative;
-  z-index:2;
 }
 
 h2{
@@ -202,9 +189,6 @@ h2{
   padding-bottom:10px;
 }
 
-/* =========================
-   CARDS
-========================= */
 .card{
   background:#111;
   border:1px solid #1f1f1f;
@@ -214,27 +198,31 @@ h2{
   color:#ccc;
 }
 
-/* =========================
-   QUOTE
-========================= */
 .quote{
   font-style:italic;
   color:#aaa;
 }
 
-/* =========================
-   FOOTER
-========================= */
 footer{
   padding:40px;
   color:#555;
-  position:relative;
-  z-index:2;
 }
 
-h1, .glitch-btn, .tagline {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+/* POPUPS */
+.popup{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#111;
+  border:1px solid #333;
+  padding:10px 15px;
+  font-size:12px;
+  color:#aaa;
+  animation:fade 3s forwards;
+}
+
+@keyframes fade{
+  0%{opacity:0;}
+  10%{opacity:1;}
+  100%{opacity:0; transform:translateY(-10px);}
 }
