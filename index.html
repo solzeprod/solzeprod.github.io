@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SØLZE // CHROME THEORY SIGNAL</title>
+  <title>SØLZE // BOOT SEQUENCE</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,124 +12,111 @@
 
 <!-- BOOT SCREEN -->
 <div id="boot">
-  <div class="boot-text">
-    <p>BOOTING SØLZE SIGNAL...</p>
-    <p>FREQUENCY LOCKED</p>
-    <p>ENTERING CHROME THEORY SPACE</p>
-  </div>
-</div>
+  <div class="boot-box">
 
-<!-- NEWS TICKER -->
-<div class="news-ticker">
-  <div class="ticker-track">
-    CHROME THEORY COMING SOON • SIGNAL STABLE • SØLZE TRANSMISSION ACTIVE • 6/7 DROP CONFIRMED • EXPERIMENTAL AUDIO ONLINE •
+    <div class="boot-message" id="bootMessage">Initializing system...</div>
+
+    <div class="bar">
+      <div class="bar-fill" id="barFill"></div>
+    </div>
+
   </div>
 </div>
 
 <!-- LIVE INDICATOR -->
-<div class="live">
-  ● LIVE SIGNAL
-</div>
+<div class="live">● LIVE</div>
+
+<!-- MAIN SITE -->
+<div id="site">
 
 <header>
-
-  <h1 id="logo" class="glitch" data-text="SØLZE">SØLZE</h1>
+  <h1 class="glitch" data-text="SØLZE">SØLZE</h1>
 
   <p class="tagline">experimental • glitch • ambient • underground</p>
 
   <div class="button-row">
 
-    <a class="glitch-btn" href="https://open.spotify.com/artist/2n5iFuO3QAHYYnBboeK7RX" target="_blank">Spotify</a>
-
-    <a class="glitch-btn" href="https://soundcloud.com/solze-productions" target="_blank">SoundCloud</a>
-
-    <a class="glitch-btn" href="https://www.youtube.com/@solzeprod" target="_blank">YouTube</a>
-
-    <a class="glitch-btn" href="https://www.instagram.com/solzeprod/" target="_blank">Instagram</a>
+    <a class="glitch-btn" href="#">Spotify</a>
+    <a class="glitch-btn" href="#">SoundCloud</a>
+    <a class="glitch-btn" href="#">YouTube</a>
+    <a class="glitch-btn" href="#">Instagram</a>
 
   </div>
-
 </header>
 
 <section>
-  <h2>NODE 01 // ABOUT</h2>
+  <h2>ABOUT</h2>
   <div class="card">
-    Gabe and Asher create sound in silence — building experimental audio systems using FL Studio.
+    SØLZE creates experimental sound systems using FL Studio.
   </div>
 </section>
 
 <section>
-  <h2>NODE 02 // UPCOMING TRANSMISSIONS</h2>
+  <h2>UPCOMING</h2>
   <div class="card">
-    <ul>
-      <li>CHROME THEORY // INCOMING</li>
-      <li>6/7 RELEASE SIGNAL</li>
-      <li>NEW AUDIO EXPERIMENTS</li>
-    </ul>
+    CHROME THEORY // COMING SOON
   </div>
 </section>
 
 <section>
-  <h2>NODE 03 // SYSTEM QUOTE</h2>
+  <h2>QUOTE</h2>
   <div class="card quote">
     “Some memories don’t fade—they just lose their signal.”
   </div>
 </section>
 
 <footer>
-  © 2026 SØLZE // SIGNAL ARCHIVE
+  © 2026 SØLZE
 </footer>
 
+</div>
+
 <script>
-  // BOOT SCREEN REMOVE
-  window.addEventListener("load", () => {
+const messages = [
+  "Booting SØLZE system...",
+  "Loading audio engine...",
+  "Syncing Chrome Theory assets...",
+  "Calibrating frequency signal...",
+  "Initializing interface..."
+];
+
+let i = 0;
+const msgEl = document.getElementById("bootMessage");
+const bar = document.getElementById("barFill");
+
+let progress = 0;
+
+const interval = setInterval(() => {
+
+  // progress bar
+  progress += 20;
+  bar.style.width = progress + "%";
+
+  // change message ONE BY ONE
+  msgEl.style.opacity = 0;
+
+  setTimeout(() => {
+    msgEl.textContent = messages[i];
+    msgEl.style.opacity = 1;
+    i++;
+  }, 300);
+
+  // finish boot
+  if(progress >= 100){
+    clearInterval(interval);
+
     setTimeout(() => {
       document.getElementById("boot").style.opacity = "0";
+
       setTimeout(() => {
         document.getElementById("boot").style.display = "none";
+        document.getElementById("site").style.opacity = "1";
       }, 800);
-    }, 1800);
-  });
 
-  // LOGO BOUNCE
-  const logo = document.getElementById("logo");
-  let clicks = 0;
-
-  logo.addEventListener("click", () => {
-    logo.classList.add("bounce");
-    clicks++;
-
-    setTimeout(() => {
-      logo.classList.remove("bounce");
     }, 600);
+  }
 
-    // easter egg
-    if(clicks === 5){
-      alert("SIGNAL OVERRIDE DETECTED // CHROME THEORY ACCESS GRANTED");
-      clicks = 0;
-    }
-  });
-
-  // SYSTEM POPUPS
-  const messages = [
-    "SIGNAL STABLE",
-    "AUDIO FREQUENCY LOCKED",
-    "CHROME THEORY SYNCING...",
-    "DATA STREAM ACTIVE"
-  ];
-
-  setInterval(() => {
-    const msg = document.createElement("div");
-    msg.className = "popup";
-    msg.innerText = messages[Math.floor(Math.random() * messages.length)];
-
-    document.body.appendChild(msg);
-
-    setTimeout(() => {
-      msg.remove();
-    }, 3000);
-
-  }, 8000);
+}, 700);
 </script>
 
 </body>
