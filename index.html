@@ -3,15 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SØLZE</title>
+  <title>SØLZE // SIGNAL</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- NEWS TICKER -->
+<div class="news-ticker">
+  <div class="ticker-track">
+    • CHROME THEORY COMING SOON •
+    • SIGNAL STABLE // NEW MUSIC IN DEVELOPMENT •
+    • SØLZE TRANSMISSION ACTIVE •
+    • 6/7 DROP CONFIRMED •
+    • EXPERIMENTAL AUDIO FREQUENCIES ONLINE •
+  </div>
+</div>
+
 <header>
-  <h1 class="glitch" data-text="SØLZE">SØLZE</h1>
+
+  <h1 id="logo" class="glitch" data-text="SØLZE">SØLZE</h1>
+
   <p class="tagline">experimental • glitch • ambient • underground</p>
 
   <div class="button-row">
@@ -25,33 +38,50 @@
     <a class="glitch-btn" href="https://www.instagram.com/solzeprod/" target="_blank">Instagram</a>
 
   </div>
+
 </header>
 
 <section>
   <h2>ABOUT</h2>
-  <p>
-    Gabe and Asher make music in their free time when life slows down.
-    They use FL Studio as their main creative tool.
-  </p>
+  <div class="card">
+    Gabe and Asher create sound in silence — when time slows and everything feels distant.
+    Built in FL Studio, shaped through experimentation, distortion, and emotion.
+  </div>
 </section>
 
 <section>
-  <h2>UPCOMING</h2>
-  <ul>
-    <li>New album soon...</li>
-    <li>Chrome Theory</li>
-    <li>June 7th (6/7)</li>
-  </ul>
+  <h2>UPCOMING TRANSMISSIONS</h2>
+  <div class="card">
+    <ul>
+      <li>CHROME THEORY — COMING SOON</li>
+      <li>6/7 RELEASE SIGNAL</li>
+      <li>NEW SOUND PACK EXPERIMENTS</li>
+    </ul>
+  </div>
 </section>
 
 <section>
-  <h2>QUOTE</h2>
-  <p class="quote">“Some memories don’t fade—they just lose their signal.”</p>
+  <h2>SYSTEM QUOTE</h2>
+  <div class="card quote">
+    “Some memories don’t fade—they just lose their signal.”
+  </div>
 </section>
 
 <footer>
-  © 2026 SØLZE
+  © 2026 SØLZE // SIGNAL ARCHIVE
 </footer>
+
+<script>
+  const logo = document.getElementById("logo");
+
+  logo.addEventListener("click", () => {
+    logo.classList.add("bounce");
+
+    setTimeout(() => {
+      logo.classList.remove("bounce");
+    }, 700);
+  });
+</script>
 
 </body>
 </html>
