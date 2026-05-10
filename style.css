@@ -201,3 +201,18 @@ footer{
   padding:40px;
   color:#555;
 }
+
+.online{
+  position:fixed;
+  top:45px;
+  right:10px;
+  color:#00ff7f;
+  font-size:12px;
+  animation:blinksoft 2s infinite;
+  z-index:1000;
+  letter-spacing:1px;
+}
+
+@keyframes blinksoft{
+  50%{opacity:0.4;}
+}
