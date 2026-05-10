@@ -95,12 +95,13 @@ h1{
   font-size:5rem;
   letter-spacing:10px;
   margin:0;
-}
-
-/* GLITCH FIX */
-.glitch{
   position:relative;
   display:inline-block;
+}
+
+/* GLITCH LOGO (RESTORED PROPERLY) */
+.glitch{
+  position:relative;
 }
 
 .glitch::before,
@@ -116,16 +117,31 @@ h1{
 .glitch::before{
   left:2px;
   text-shadow:-2px 0 red;
+  animation:gl1 2s infinite;
 }
 
 .glitch::after{
   left:-2px;
   text-shadow:-2px 0 blue;
+  animation:gl2 2s infinite;
+}
+
+@keyframes gl1{
+  0%{clip-path:inset(0 0 80% 0);}
+  50%{clip-path:inset(30% 0 40% 0);}
+  100%{clip-path:inset(0 0 80% 0);}
+}
+
+@keyframes gl2{
+  0%{clip-path:inset(80% 0 10% 0);}
+  50%{clip-path:inset(10% 0 60% 0);}
+  100%{clip-path:inset(80% 0 10% 0);}
 }
 
 /* TAGLINE */
 .tagline{
   color:#888;
+  margin-top:10px;
 }
 
 /* BUTTONS */
